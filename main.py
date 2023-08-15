@@ -5,14 +5,20 @@ app = Flask(__name__)
 # Hier werden die Daten abgefragt und an index.html weitergegeben
 @app.route("/")
 def index():
-    items = helper.get_all()
-    return render_template('index.html', items=items)
+    todos = helper.get_all()
+    return render_template('index.html', todos=todos)
 
 @app.route('/add', methods=["POST"])
 def add():
-    text = request.form.get("text")
-    helper.add(text)
+    title = request.form.get("title")
+    helper.add(title)
     return redirect(url_for("index"))
+
+@app.route('/create/<string:title>', methods=["GET"])
+def create(title):
+    helper.add(title)
+    return redirect(url_for("index"))
+
 
 @app.route('/update/<int:index>')
 def update(index):

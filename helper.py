@@ -1,26 +1,27 @@
 from dataclasses import dataclass
 
-# Die Daten werden in "Items" gespeichert
-items = []
+# Die Daten werden in "todos" gespeichert
+todos = []
 
 @dataclass
-class Item:
-    text: str
+class Todo:
+    title: str
     isCompleted: bool = False
 
 # Ver-BBB-isierung
-def add(text):
-    text = text.replace('b', 'bbb').replace('B', 'Bbb')
-    items.append(Item(text))
+def add(title):
+    title = title.replace('b', 'bbb').replace('B', 'Bbb')
+    todos.append(Todo(title))
 
-# Hier werden alle Items zurückgegeben
+# Hier werden alle todos zurückgegeben
 def get_all():
-    return items
+    print(todos)
+    return todos
 
 # Hier wird ein Item zurückgegeben
 def get(index):
-    return items[index]
+    return todos[index]
 
 # Hier wird ein Item als "erledigt" oder "nicht erledigt" markiert
 def update(index):
-    items[index].isCompleted = not items[index].isCompleted
+    todos[index].isCompleted = not todos[index].isCompleted
