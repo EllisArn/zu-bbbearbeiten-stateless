@@ -19,7 +19,6 @@ def create(title):
     helper.add(title)
     return redirect(url_for("index"))
 
-
 @app.route('/update/<int:index>')
 def update(index):
     helper.update(index)
