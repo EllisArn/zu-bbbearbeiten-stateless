@@ -11,7 +11,8 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     title = request.form.get("title")
-    helper.add(title)
+    date = request.form.get("date")
+    helper.add(title, date)
     return redirect(url_for("index"))
 
 @app.route('/create/<string:title>', methods=["GET"])
