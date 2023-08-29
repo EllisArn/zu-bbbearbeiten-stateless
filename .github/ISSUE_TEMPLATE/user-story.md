@@ -1,8 +1,8 @@
 ---
-name: User Story
-about: You can write a user story.
+name: user story
+about: Suggest an idea for this project
 title: As <role>, I want <something> so that <something>
-labels: User Story
+labels: 'status: new issue, type: user story'
 assignees: ''
 
 ---
