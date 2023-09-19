@@ -1,29 +1,41 @@
-from dataclasses import dataclass
 import datetime
+import operator
+from dataclasses import dataclass
 
-# Die Daten werden in "todos" gespeichert
 todos = []
 
+
 @dataclass
-class Todo:
-    title: str
-    date: datetime.date
+class Item:
+    text: str
+    date: datetime
     isCompleted: bool = False
 
-# Ver-BBB-isierung
-def add(title, date):
-    title = title.replace('b', 'bbb').replace('B', 'Bbb')
-    todos.append(Todo(title, date))
 
-# Hier werden alle todos zurückgegeben
+def oneWeekFromToday():
+    today = datetime.datetime.now()
+    oneWeek = datetime.timedelta(weeks=1)
+    return today + oneWeek
+
+
+def add(text, date=None):
+    text = text.replace("b", "bbb").replace("B", "Bbb")
+
+    if date is None:
+        date = oneWeekFromToday()
+    else:
+        date = datetime.datetime.strptime(date, "%Y-%m-%d")
+    todos.append(Item(text, date))
+    todos.sort(key=operator.attrgetter("date"))
+
+
 def get_all():
-    print(todos)
     return todos
 
-# Hier wird ein Item zurückgegeben
+
 def get(index):
     return todos[index]
 
-# Hier wird ein Item als "erledigt" oder "nicht erledigt" markiert
+
 def update(index):
     todos[index].isCompleted = not todos[index].isCompleted
