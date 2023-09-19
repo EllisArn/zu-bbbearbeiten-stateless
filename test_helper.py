@@ -5,11 +5,11 @@ import helper
 
 def test_add():
     # Given: I want to add a to-do with a date
-    text = "Lorem ipsum"
+    title = "Lorem ipsum"
     date = "2023-09-02"
 
     # When: I add the item
-    helper.add(text, date)
+    helper.add(title, date)
 
     # Then: The most recently added to-do should have a date
     todo = helper.todos[-1]
@@ -32,3 +32,7 @@ def test_sort():
     # Then: They should be sorted by date
     for i in range(len(helper.todos) - 1):
         assert helper.todos[i].date < helper.todos[i + 1].date
+
+
+def test_csv():
+    helper.get_csv()
