@@ -6,20 +6,12 @@ labels: 'Typ: [Funktionale Anforderung, Qualitätsanforderung, Randanforderung]'
 assignees: ''
 
 ---
+# Die Anforderung soll folgenden Aufbau haben:
+### Zielsystem + Priorität + Systemaktivität + allf. Ergänzungen + Funktionalität + Bedingungen, wobei:
 
-**Beschreibung:**
+•	Zielsystem das zu betroffene (Teil-)System ist
+•	Priorität durch muss bei hoher, soll bei mittlerer und wird bei niedriger Priorität angegeben wird
+•	Systemaktivität beschreibt, ob das System selbständig handeln soll, einem Benutzer eine Funktion anbieten soll oder einer Schnittstelle bedarf. Wählen Sie die Formulierung dem Administrator o. ä. die Möglichkeit bieten für Benutzerfunktionen, und fähig sein für Schnittstellenanforderungen.
+•	Zeitliche Bedingungen mit wenn, und logische Bedingungen mit falls beschrieben werden.
 
-- **Zielsystem:** [Hier das betroffene Teil- oder Subsystem einfügen]
-- **Priorität:** [Hier hohe, mittlere oder niedrige Priorität auswählen]
-- **Systemaktivität:** [Hier wählen, ob das System selbständig handeln, eine Funktion für Benutzer anbieten oder eine Schnittstelle benötigen soll]
-- **Allf. Ergänzungen:** [Hier zusätzliche Informationen oder Ergänzungen zur Anforderung hinzufügen]
-- **Funktionalität:** [Hier die gewünschte Funktionalität beschreiben]
-- **Bedingungen:** [Hier zeitliche Bedingungen mit "wenn" und logische Bedingungen mit "falls" beschreiben]
-
-**Beispiel:**
-
-[Zielsystem] [Priorität] [Systemaktivität] [allf. Ergänzungen] [Funktionalität] [Bedingungen]
-
----
-
-**Etiketten:** 'Typ: [Funktionale Anforderung, Qualitätsanforderung, Randanforderung]'
+Beispiel: Reflect Media Player (Zielsystem) muss (= hohe Priorität) dem Benutzer die Möglichkeit bieten (= Benutzerinteraktion), J3D Szenengraphen aus einer wrml-Datei 
